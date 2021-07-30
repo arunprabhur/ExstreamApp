@@ -1,0 +1,35 @@
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.hpx.batch</groupId>
+   <artifactId>Bcard</artifactId>
+   <version>0.0.3-SNAPSHOT</version>
+<build>
+  <plugins>
+    <!-- your plugins, including or not maven-resource-plugin -->
+  </plugins>
+   <resources>
+    <resource>
+      <filtering>true</filtering><!-- if it is neccessary -->
+      <directory>C:\Users\Priya Arun\.jenkins\workspace\jenkins-mvn-nexus-pipeline\</directory><!-- from -->
+      <targetPath>C:\Users\Priya Arun\.jenkins\workspace\jenkins-mvn-nexus-pipeline\target\classes</targetPath><!-- to -->
+      <includes><!-- what -->
+        <include>ExstreamPackage.pub</include>
+      </includes>
+    </resource>
+  </resources>
+</build>
+<distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://localhost:2225/repository/hpx-maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://localhost:2225/repository/hpx-maven-releases/</url>
+    </repository>
+  </distributionManagement>
+
+</project>
